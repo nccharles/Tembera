@@ -16,7 +16,8 @@ export default class App extends Component {
 
 	async componentDidMount() {
 		
-		const retrieveduserChoice = await AsyncStorage.getItem(userChoice);
+        const retrieveduserChoice = await AsyncStorage.getItem(userChoice);
+        setTimeout(() => {
 		if (retrieveduserChoice === 'true') {
 			this.setState({
 				checkedSignIn: true,
@@ -35,7 +36,7 @@ export default class App extends Component {
               NavigationActions.navigate({ routeName: "IntroScreen" })
             );
         }
-        
+    },5000)
 
 	}
 
